@@ -10,9 +10,8 @@ on:
       - '**/*.md'
       - 'docs/**'
       - 'images/**'
-      - '.github/**'
       - 'agent-skill/**'
-      - '!.github/workflows/code-quality.yml'  # Always run when this workflow changes
+      - 'ruff.toml'
   pull_request:
     branches:
       - main
@@ -22,11 +21,7 @@ on:
       - '**/*.md'
       - 'docs/**'
       - 'images/**'
-      - '.github/**'
       - 'agent-skill/**'
-      - '*.yml'
-      - '*.yaml'
-      - 'ruff.toml'
   workflow_dispatch:  # Allow manual triggering
 
 concurrency:
