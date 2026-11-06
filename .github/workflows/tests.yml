@@ -63,6 +63,7 @@ jobs:
         cache-dependency-path: |
           pyproject.toml
           tox.ini
+          tests/requirements.txt
 
     - name: Install all browsers dependencies
       run: |
@@ -105,7 +106,7 @@ jobs:
       with:
         path: .tox
         # Include python version and os in the cache key
-        key: tox-v1-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'tox.ini') }}
+        key: tox-v1-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'tox.ini', 'tests/requirements.txt') }}
         restore-keys: |
           tox-v1-${{ runner.os }}-py${{ matrix.python-version }}-
           tox-v1-${{ runner.os }}-

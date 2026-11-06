@@ -1,7 +1,7 @@
 FROM python:3.12-slim-trixie
 
 LABEL io.modelcontextprotocol.server.name="io.github.D4Vinci/Scrapling"
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.13.7 /uv /uvx /bin/
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive \
